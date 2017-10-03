@@ -2,21 +2,34 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 
+import { Button } from 'react-native-elements';
+
+import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
+
+
+
+
 class HomeScreen extends Component {
+
+    constructor(props) {
+        super(props);
+        this.inputChange.bind(this);
+    }
+
+    inputChange(e) {
+        console.log(e);
+    }
+
     render() {
         const { movie } = this.props;
-
-        const movieList = movie.map((movieItem) => {
-            return <View key={movieItem.id}>
-                <Text>{movieItem.name}</Text>
-                <Text>{movieItem.desc}</Text>
-            </View>
-        });
-
         return (
             <View>
-                <Text>HomeScreen</Text>
-                {movieList}
+                <Text>注册</Text>
+                <View>
+                    <FormLabel>手机号</FormLabel>
+                    <FormInput onChangeText={this.inputChange}/>
+                    <FormValidationMessage>手机号不存在</FormValidationMessage>
+                </View>
             </View>
         );
     }

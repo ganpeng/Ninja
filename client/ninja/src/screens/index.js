@@ -1,7 +1,7 @@
 import {Navigation} from 'react-native-navigation';
 
-import HomeScreen from './HomeScreen'; 
-import BlogScreen from './BlogScreen'; 
+import HomeScreen from './HomeScreen';
+import BlogScreen from './BlogScreen';
 import Drawer from './Drawer';
 
 

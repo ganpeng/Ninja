@@ -8,43 +8,23 @@ import store from './store/';
 
 registerScreens(store, Provider);
 
-
 iconsLoaded.then(() => {
     startApp();
 });
 
 function startApp() {
-    const tabs = [{
-        label: 'HomeScreen',
-        screen: 'ninja.HomeScreen',
-        icon: iconsMap['ios-person--active'],
-        title: 'HomeScreen',
-    }, {
-        label: 'BlogScreen',
-        screen: 'ninja.BlogScreen',
-        icon: iconsMap['ios-people'],
-        title: 'BlogScreen',
-    }];
-    
-    Navigation.startTabBasedApp({
-        tabs,
-        animationType: 'fade',
-        tabsStyle: {
-            tabBarBackgroundColor: global.themeColor,
-            tabBarButtonColor: global.textColor,
-            tabBarSelectedButtonColor: global.tabBarSelectedButtonColor,
-            tabFontFamily: 'BioRhyme-Bold',
-        },
-        appStyle: {
-            tabBarBackgroundColor: global.themeColor,
-            navBarButtonColor: global.textColor,
-            tabBarButtonColor: global.textColor,
-            navBarTextColor: global.textColor,
-            tabBarSelectedButtonColor: global.tabBarSelectedButtonColor,
-            navigationBarColor: global.themeColor,
-            navBarBackgroundColor: global.themeColor,
-            statusBarColor: global.themeColor,
-            tabFontFamily: 'BioRhyme-Bold',
+    Navigation.startSingleScreenApp({
+        screen: {
+            title: '登录',
+            screen: 'ninja.LoginContainer',
+            navigatorStyle: {
+                navBarButtonColor: global.textColor,
+                navBarTextColor: global.textColor,
+                navigationBarColor: global.themeColor,
+                navBarBackgroundColor: global.themeColor,
+                statusBarColor: global.themeColor,
+            },
+            animationType: 'fade',
         },
         drawer: {
             left: {
@@ -52,5 +32,6 @@ function startApp() {
             }
         }
     });
+
 }
 

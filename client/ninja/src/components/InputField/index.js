@@ -6,13 +6,14 @@ class InputField extends Component {
         super(props);
     }
     render() {
-        const {value, placeholder, placeholderTextColor, secureTextEntry, selectTextOnFocus, autoFocus, editable, multiline, onChangeText, custormStyles} = this.props;
+        const {value, keyboardType, placeholder, placeholderTextColor, secureTextEntry, selectTextOnFocus, autoFocus, editable, multiline, onChangeText, custormStyles} = this.props;
         return (
             <View style={[styles.container, custormStyles && custormStyles.container]}>
                 <TextInput
                     style={[styles.input, custormStyles && custormStyles.input]}
                     underlineColorAndroid="transparent"
                     placeholder={placeholder}
+                    keyboardType={keyboardType}
                     placeholderTextColor={placeholderTextColor}
                     secureTextEntry={secureTextEntry}
                     selectTextOnFocus={selectTextOnFocus}
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
         height: 40,
         borderRadius: 4,
         borderWidth: 1,
-        borderColor: "red",
+        borderColor: "#999",
         paddingHorizontal: 20
     },
     input: {

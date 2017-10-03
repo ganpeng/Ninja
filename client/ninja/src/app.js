@@ -1,8 +1,7 @@
 import { Provider } from 'react-redux';
 import { Navigation } from 'react-native-navigation';
+
 import { registerScreens } from './screens';
-
-
 import { iconsMap, iconsLoaded } from './utils/appIcon';
 import global from './constants/global';
 import store from './store/';
